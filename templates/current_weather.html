@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Current Weather</title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/readable/bootstrap.min.css" rel="stylesheet" integrity="sha384-Li5uVfY2bSkD3WQyiHX8tJd0aMF91rMrQP5aAewFkHkVSTT2TmD2PehZeMmm7aiL" crossorigin="anonymous">
+
+<body>
+	{% if current_weather == None %}
+		<div>	
+			<h1>Unavailable</h1>
+		</div>
+	{% else %}
+		<div>	
+			<h1>{{ current_weather["name"] }}, {{ current_weather["country"]}}</h1>
+		</div>
+
+		<div>
+			<img class="img-fluid img-circle" src="{{ current_weather['icon'] }}" alt="Weather icon">
+		</div>
+
+		<div class="container">  	         
+	  		<table class="table table-hover">    	
+	    		<tbody>
+	    			<tr>
+	        			<td>Time</td>
+	        			<td>{{ current_weather["time"] }}</td>        
+	      			</tr>      			
+	    			<tr>
+	        			<td>Weather</td>
+	        			<td>{{ current_weather["main"] }}</td>        
+	      			</tr>
+	    			<tr>
+	        			<td>Description</td>
+	        			<td>{{ current_weather["description"] }}</td>        
+	      			</tr>
+	      			<tr>
+	        			<td>Temperature</td>
+	        			<td>{{ current_weather["temperature"] }}</td>        
+	      			</tr>
+	      			{% if current_weather["clouds"] > 0 %}           
+	      				<tr>
+	        				<td>Clouds</td>
+	        				<td>{{ current_weather["clouds"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			{% if current_weather["rain"] > 0 %}           
+	      				<tr>
+	        				<td>Rain</td>
+	        				<td>{{ current_weather["rain"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			{% if current_weather["snow"] > 0 %}           
+	      				<tr>
+	        				<td>Snow</td>
+	        				<td>{{ current_weather["snow"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			{% if current_weather["humidity"] > 0 %}           
+	      				<tr>
+	        				<td>Humidity</td>
+	        				<td>{{ current_weather["humidity"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			{% if current_weather["pressure"] > 0 %}           
+	      				<tr>
+	        				<td>Pressue</td>
+	        				<td>{{ current_weather["pressure"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			{% if current_weather["visibility"] > 0 %}           
+	      				<tr>
+	        				<td>Visibility</td>
+	        				<td>{{ current_weather["visibility"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			{% if current_weather["speed"] > 0 %}           
+	      				<tr>
+	        				<td>Wind Speed</td>
+	        				<td>{{ current_weather["speed"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			{% if current_weather["degree"] > 0 %}           
+	      				<tr>
+	        				<td>Wind Degree</td>
+	        				<td>{{ current_weather["degree"] }}</td>        
+	      				</tr>      	
+	      			{% endif %}
+	      			<tr>
+	        			<td>Sunrise</td>
+	        			<td>{{ current_weather["sunrise"] }}</td>        
+	      			</tr>
+	      			<tr>
+	        			<td>Sunset</td>
+	        			<td>{{ current_weather["sunset"] }}</td>        
+	      			</tr>
+	    		</tbody>
+	  		</table>
+		</div> 
+	{% endif %}  
+		
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</body>
+</html>

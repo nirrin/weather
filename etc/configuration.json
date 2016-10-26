@@ -1,0 +1,12 @@
+{
+	"open_weather_map_api_key": "c57323eac6dd6a83d9b70f14def91aae",
+	"google_api_key": "AIzaSyA6MRTkNXBqWgGsQB3bkbSyHIVA3_aoYTQ",
+	"address": "55 Bilu St Raanana Israel",
+	"location_file": "./data/location.json",
+	"location_expiration": 31536000,
+	"cities_file": "./data/cities.json",
+	"cities_expiration": 31536000,
+	"current_weather_file": "./data/current_weather.json",
+	"current_weather_expiration": 3600,
+	"web_port": 5000
+}
